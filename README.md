@@ -1,60 +1,70 @@
-# 📚 Document Chat Application
+# Document RAG Chat Application
 
 ## Overview
-This project is a **Retrieval-Augmented Generation (RAG) application** that allows users to upload documents (**PDF, DOCX, TXT**) and ask questions based on their content. The app retrieves relevant passages using **FAISS** and generates AI-driven responses using a **T5 Transformer model**.
+The **Document RAG Chat Application** is an advanced chatbot powered by Retrieval-Augmented Generation (RAG). It enables users to upload documents, retrieve relevant information, and interact with an AI-powered chatbot that provides context-aware responses based on the uploaded data.
 
 ## Features
-- **Supports Multiple File Formats:** PDF, DOCX, and TXT.
-- **Text Chunking & Indexing:** Preprocesses text into smaller chunks and indexes them using FAISS.
-- **Semantic Search:** Uses **SentenceTransformers** to find the most relevant document passages.
-- **AI-Powered Response Generation:** Utilizes **T5 Transformer** to generate meaningful responses.
-- **Interactive UI:** Built with **Streamlit** for a simple and user-friendly experience.
+- **Document Uploading**: Users can upload PDF, DOCX, or TXT files.
+- **Retrieval-Augmented Generation (RAG)**: Enhances responses with document-based retrieval.
+- **AI-Powered Chatbot**: Provides context-aware responses.
+- **Efficient Query Handling**: Uses embeddings and vector databases for fast retrieval.
+- **User-Friendly Interface**: Built with a clean and interactive UI.
 
-## Technologies Used
-- **Python** (Primary programming language)
-- **Streamlit** (For interactive UI)
-- **FAISS** (For vector-based similarity search)
-- **T5 Transformer Model** (For text generation)
-- **SentenceTransformers** (For embedding document text)
-- **PyPDF2** (For parsing PDF documents)
-- **docx (python-docx)** (For extracting text from DOCX files)
+## Tech Stack
+- **Backend**: Python, FastAPI/Flask
+- **Frontend**: React.js / Streamlit (optional)
+- **Database**: FAISS / ChromaDB / Pinecone
+- **LLM**: OpenAI GPT / LlamaIndex / LangChain
 
 ## Installation
-1. **Clone the repository:**
+### Prerequisites
+Ensure you have the following installed:
+- Python (>= 3.8)
+- Node.js (if using React frontend)
+- Virtual environment (optional but recommended)
+
+### Steps
+1. **Clone the Repository**
    ```bash
-   git clone https://github.com/your-repo/document-chat-app.git
-   cd document-chat-app
-   ```
-2. **Install dependencies:**
-   ```bash
-   pip install streamlit transformers faiss-cpu sentence-transformers PyPDF2 python-docx numpy
-   ```
-3. **Run the application:**
-   ```bash
-   streamlit run rag_app.py
+   git clone https://github.com/Sauham/Document-RAG-Chat-Application.git
+   cd Document-RAG-Chat-Application
    ```
 
-## How It Works
-1. **Upload Documents:** Users can upload multiple PDF, DOCX, or TXT files.
-2. **Processing & Indexing:**
-   - Extracts text from uploaded files.
-   - Splits text into chunks.
-   - Embeds and indexes chunks using FAISS.
-3. **Ask Questions:** Users enter queries, and the system:
-   - Finds the most relevant document passages.
-   - Generates AI-based responses using the **T5 model**.
-4. **Results Displayed:** The app shows AI-generated answers and relevant text excerpts.
+2. **Create Virtual Environment & Install Dependencies**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows use: venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-## Future Improvements
-- Add support for **more document formats** (e.g., Excel, PPTX).
-- Improve text chunking strategy for better context retrieval.
-- Optimize model response generation with **larger T5 variants**.
-- Implement **real-time indexing** for dynamically added documents.
+3. **Run the Backend**
+   ```bash
+   python app.py  # Or uvicorn main:app --reload (if using FastAPI)
+   ```
+
+4. **Run the Frontend (if applicable)**
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
+
+## Usage
+1. Open the application in your browser.
+2. Upload a document (PDF, DOCX, TXT).
+3. Ask questions related to the uploaded document.
+4. Get AI-powered responses with relevant context.
+
+## Future Enhancements
+- Add support for multiple document uploads.
+- Implement authentication for user sessions.
+- Improve response accuracy with better fine-tuned models.
+
+## Contributing
+Contributions are welcome! Feel free to fork the repository, create a feature branch, and submit a pull request.
 
 ## License
-This project is open-source and available under the **MIT License**.
+This project is licensed under the MIT License.
 
 ---
-
-🚀 **Try out the Document Chat App and transform how you interact with documents using AI!**
-
+Feel free to reach out with any questions or suggestions!
